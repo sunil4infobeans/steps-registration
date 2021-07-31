@@ -1,4 +1,6 @@
 $(function(){
+    
+    // Applied form steps
     $("#form-total").steps({
         headerTag: "h2",
         bodyTag: "section",
@@ -9,72 +11,23 @@ $(function(){
         transitionEffectSpeed: 500,
         titleTemplate : '<div class="title">#title#</div>',
         labels: {
-            previous : 'Back Step',
-            next : '<i class="zmdi zmdi-arrow-right"></i>',
-            finish : '<i class="zmdi zmdi-check"></i>',
+            previous : '<small>Previous</small>',
+            next : '<small>Next</small>',
+            finish : '<small>Save</small>',
             current : ''
         }
     });
-    // $("form[name='registration']").validate({
-    //     rules: { 
-    //       fullname : "required",
-    //       address: "required",
-    //       email: {
-    //         required: true,
-    //         email: true
-    //       },
-         
-    //     },
-    //     // Specify validation error messages
-    //     messages: {
-    //       name: "Please enter your firstname",
-    //       addres: "Please enter your address",
-
-    //       email: "Please enter a valid email address"
-    //     },
-
-    //     submitHandler: function(form) {
-    //       form.submit();
-    //     }
-    //   });
+    
+    // Applied calander
     $('#dob').dcalendarpicker();
 });
 
-function show_desc_1()
-	{
-		document.getElementById('text_desc_1').style.display="block";
-    }
-    function show_desc_2()
-	{
-		document.getElementById('text_desc_2').style.display="block";
-    }
-    function show_desc_3()
-	{
-		document.getElementById('text_desc_3').style.display="block";
-    }
-    function show_desc_4()
-	{
-		document.getElementById('text_desc_4').style.display="block";
-    }
-    
-    
-
-    function hide_desc_1()
-	{
-	document.getElementById('text_desc_1').style.display="none";
+function showDesc(id)
+{
+    $(id).show();
 }
-    function hide_desc_2()
-    {
-    document.getElementById('text_desc_2').style.display="none";
+
+function hideDesc(id)
+{
+    $(id).hide();
 }
-    function hide_desc_3()
-	{
-        document.getElementById('text_desc_3').style.display="none";
-    }
-    function hide_desc_4()
-	{
-        document.getElementById('text_desc_4').style.display="none";
-    }
-    
-
-
