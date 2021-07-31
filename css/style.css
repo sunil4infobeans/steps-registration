@@ -561,6 +561,14 @@ textarea.textarea-desc {
 		margin-bottom: 0;
 	}
 }
+.error {
+    font-size: 14px;
+    color: #e45050;
+}
+.input-field {
+    border: 1px solid gray !important;
+    padding: 10px !important;
+}
 @media screen and (max-width: 575px) {
 textarea.textarea-desc {
     width: 100%;

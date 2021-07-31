@@ -1,7 +1,12 @@
 $(function(){
     
+    var form = $("#registration");
+    form.validate({
+        errorPlacement: function errorPlacement(error, element) { element.before(error); },
+        rules: {}
+    });
     // Applied form steps
-    $("#form-total").steps({
+    form.children("#form-total").steps({
         headerTag: "h2",
         bodyTag: "section",
         transitionEffect: "fade",
@@ -15,6 +20,20 @@ $(function(){
             next : '<small>Next</small>',
             finish : '<small>Save</small>',
             current : ''
+        },
+        onStepChanging: function (event, currentIndex, newIndex)
+        {
+            form.validate().settings.ignore = ":disabled,:hidden";
+            return form.valid();
+        },
+        onFinishing: function (event, currentIndex)
+        {
+            form.validate().settings.ignore = ":disabled";
+            return form.valid();
+        },
+        onFinished: function (event, currentIndex)
+        {
+            alert("Submitted!");
         }
     });
     
